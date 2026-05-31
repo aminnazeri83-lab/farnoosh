@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+
+<title>Happy Birthday Farnoosh 🎂</title>
+<meta name="theme-color" content="#0F172A">
+
+<style>
+  :root{
+    --primary:#FBBF24;
+    --secondary:#38BDF8;
+    --accent:#A78BFA;
+    --bg1:#050816;
+    --bg2:#0F172A;
+    --ink:#F8FAFC;
+    --muted:rgba(248,250,252,.75);
+    --card:rgba(15,23,42,.72);
+    --card2:rgba(2,6,23,.38);
+    --border:rgba(255,255,255,.14);
+    --shadow:0 22px 70px rgba(0,0,0,.55);
+    --radius:24px;
+    --floor-gap:clamp(70px, 10vh, 180px);
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  html,
+  body{
+    min-height:100%;
+    margin:0;
+    overflow-x:hidden;
+  }
+
+  body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(clamp(520px, 80vw, 1100px) clamp(340px, 54vh, 780px) at 80% 0%, rgba(56,189,248,.22), transparent 62%),
+      radial-gradient(clamp(520px, 75vw, 1000px) clamp(320px, 48vh, 700px) at 12% 92%, rgba(251,191,36,.16), transparent 60%),
+      radial-gradient(clamp(440px, 65vw, 900px) clamp(280px, 40vh, 600px) at 110% 110%, rgba(167,139,250,.14), transparent 62%),
+      linear-gradient(135deg, var(--bg1), var(--bg2));
+    background-attachment:fixed;
+    padding:
+      max(24px, env(safe-area-inset-top))
+      22px
+      calc(max(24px, env(safe-area-inset-bottom)) + var(--floor-gap))
+      22px;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(2px 2px at 12% 24%, rgba(255,255,255,.50), transparent 60%),
+      radial-gradient(2px 2px at 24% 76%, rgba(255,255,255,.30), transparent 60%),
+      radial-gradient(2px 2px at 48% 38%, rgba(255,255,255,.34), transparent 60%),
+      radial-gradient(2px 2px at 72% 62%, rgba(255,255,255,.44), transparent 60%),
+      radial-gradient(2px 2px at 86% 28%, rgba(255,255,255,.35), transparent 60%),
+      radial-gradient(2px 2px at 92% 82%, rgba(255,255,255,.38), transparent 60%);
+    opacity:.30;
+    animation:twinkle 7s ease-in-out infinite;
+  }
+
+  @keyframes twinkle{
+    0%,100%{opacity:.18; transform:translateY(0)}
+    50%{opacity:.34; transform:translateY(-5px)}
+  }
+
+  #confetti{
+    position:fixed;
+    inset:0;
+    z-index:90;
+    pointer-events:none;
+  }
+
+  .screen{
+    width:min(780px, 100%);
+    margin-inline:auto;
+  }
+
+  .lock-screen{
+    min-height:calc(100svh - 80px);
+    display:grid;
+    place-items:center;
+  }
+
+  .lock-card{
+    width:min(520px, 100%);
+    position:relative;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+    background:
+      linear-gradient(180deg, rgba(15,23,42,.78), rgba(2,6,23,.66)),
+      radial-gradient(560px 260px at 80% 0%, rgba(251,191,36,.16), transparent 60%);
+    box-shadow:var(--shadow), 0 0 36px rgba(56,189,248,.14);
+    backdrop-filter:blur(14px);
+    padding:26px;
+    overflow:hidden;
+  }
+
+  .lock-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      linear-gradient(120deg, transparent, rgba(255,255,255,.06), transparent),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.018), rgba(255,255,255,.018) 1px, transparent 1px, transparent 4px);
+    opacity:.6;
+  }
+
+  .lock-content{
+    position:relative;
+    z-index:1;
+  }
+
+  .lock-icon{
+    width:70px;
+    height:70px;
+    display:grid;
+    place-items:center;
+    border-radius:22px;
+    margin:0 auto 16px;
+    background:rgba(251,191,36,.12);
+    border:1px solid rgba(251,191,36,.26);
+    font-size:34px;
+    box-shadow:0 0 30px rgba(251,191,36,.13);
+  }
+
+  .lock-title{
+    margin:0;
+    font-size:25px;
+    text-align:center;
+    line-height:1.5;
+  }
+
+  .lock-text{
+    margin:10px auto 20px;
+    color:var(--muted);
+    text-align:center;
+    line-height:1.9;
+    max-width:420px;
+    font-size:15px;
+  }
+
+  .input-row{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .date-input{
+    width:min(260px, 100%);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:16px;
+    padding:14px 15px;
+    color:var(--ink);
+    background:rgba(0,0,0,.24);
+    outline:none;
+    text-align:center;
+    direction:ltr;
+    font-weight:800;
+    letter-spacing:.5px;
+    box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;
+  }
+
+  .date-input:focus{
+    border-color:rgba(251,191,36,.55);
+    box-shadow:0 0 0 4px rgba(251,191,36,.10);
+  }
+
+  .hint{
+    margin:10px 0 0;
+    text-align:center;
+    color:rgba(248,250,252,.52);
+    font-size:12px;
+  }
+
+  .error{
+    min-height:24px;
+    margin:12px 0 0;
+    text-align:center;
+    color:#FCA5A5;
+    font-weight:800;
+  }
+
+  .stage{
+    display:none;
+    min-height:100svh;
+    position:relative;
+    width:min(760px, 100%);
+    margin-inline:auto;
+  }
+
+  .stage.show{
+    display:block;
+    animation:fadeIn .45s ease;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0; transform:translateY(8px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+
+  .envelope{
+    position:relative;
+    height:360px;
+    perspective:1200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .env-body{
+    position:absolute;
+    inset:0;
+    border-radius:24px;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.055)),
+      radial-gradient(360px 180px at 75% 0%, rgba(251,191,36,.18), transparent 60%);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(12px);
+  }
+
+  .env-body::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.025), rgba(255,255,255,.025) 1px, transparent 1px, transparent 4px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.014), rgba(255,255,255,.014) 1px, transparent 1px, transparent 3px);
+    opacity:.42;
+  }
+
+  .flap{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:58%;
+    transform-origin:top center;
+    transform:rotateX(0deg);
+    transition:transform 900ms cubic-bezier(.2,.8,.1,1);
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    background:linear-gradient(135deg, rgba(251,191,36,.30), rgba(56,189,248,.28), rgba(167,139,250,.20));
+    border-top-left-radius:22px;
+    border-top-right-radius:22px;
+    border:1px solid rgba(255,255,255,.14);
+    border-bottom:none;
+    box-shadow:0 16px 22px rgba(0,0,0,.24) inset, 0 -12px 16px rgba(255,255,255,.08) inset;
+  }
+
+  .flap::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-10%);
+    width:72%;
+    height:2px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+    opacity:.62;
+  }
+
+  .opened .flap{
+    transform:rotateX(-185deg);
+  }
+
+  .opened .open-wrap{
+    display:none;
+  }
+
+  .seal{
+    position:absolute;
+    left:50%;
+    top:42%;
+    transform:translate(-50%,-50%);
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:radial-gradient(circle at 30% 30%, rgba(251,191,36,.95) 0%, rgba(251,191,36,.60) 52%, rgba(56,189,248,.22) 100%);
+    color:#111827;
+    font-size:28px;
+    box-shadow:0 12px 32px rgba(251,191,36,.28), 0 0 30px rgba(251,191,36,.22);
+    border:1px solid rgba(255,255,255,.20);
+    user-select:none;
+  }
+
+  .stamp{
+    position:absolute;
+    top:22px;
+    right:24px;
+    font-size:30px;
+    filter:drop-shadow(0 0 10px rgba(251,191,36,.30));
+    user-select:none;
+  }
+
+  .env-label{
+    position:absolute;
+    left:24px;
+    right:24px;
+    bottom:24px;
+    border-radius:16px;
+    padding:12px 14px;
+    text-align:center;
+    color:rgba(248,250,252,.86);
+    background:rgba(0,0,0,.22);
+    border:1px solid rgba(255,255,255,.13);
+    box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;
+    font-weight:900;
+  }
+
+  .open-wrap{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-28px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .btn,
+  .open-btn,
+  .unlock-btn{
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;
+    padding:11px 16px;
+    cursor:pointer;
+    font-weight:900;
+    color:#FEF3C7;
+    background:rgba(0,0,0,.24);
+    transition:transform .08s ease, filter .12s ease, box-shadow .15s ease;
+    box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;
+    font-family:inherit;
+  }
+
+  .open-btn,
+  .unlock-btn,
+  .btn.primary{
+    background:linear-gradient(180deg, rgba(251,191,36,.96), rgba(217,119,6,.82));
+    color:#111827;
+    border-color:rgba(251,191,36,.60);
+    box-shadow:0 16px 34px rgba(251,191,36,.22), 0 0 18px rgba(251,191,36,.15);
+  }
+
+  .btn:hover,
+  .open-btn:hover,
+  .unlock-btn:hover{
+    filter:brightness(1.05);
+    box-shadow:0 0 20px rgba(251,191,36,.15), 0 0 18px rgba(56,189,248,.10), 0 0 0 1px rgba(255,255,255,.08) inset;
+  }
+
+  .btn:active,
+  .open-btn:active,
+  .unlock-btn:active{
+    transform:translateY(1px);
+  }
+
+  .btn:disabled,
+  .open-btn:disabled,
+  .unlock-btn:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+  }
+
+  .card{
+    position:relative;
+    display:none;
+    margin-top:36px;
+    margin-bottom:calc(var(--floor-gap) * .55);
+    border-radius:var(--radius);
+    overflow:hidden;
+    backdrop-filter:blur(14px);
+    border:2px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(120deg, rgba(251,191,36,.95), rgba(56,189,248,.75), rgba(255,255,255,.72), rgba(167,139,250,.70)) border-box;
+    box-shadow:var(--shadow), 0 0 26px rgba(251,191,36,.13), 0 0 24px rgba(56,189,248,.12);
+  }
+
+  .card.show{
+    display:block;
+    animation:pop .7s ease;
+  }
+
+  @keyframes pop{
+    from{opacity:0; transform:translateY(12px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    box-shadow:inset 0 0 90px rgba(251,191,36,.08), inset 0 0 70px rgba(56,189,248,.07);
+  }
+
+  .card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.016), rgba(255,255,255,.016) 1px, transparent 1px, transparent 4px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.010), rgba(255,255,255,.010) 1px, transparent 1px, transparent 3px);
+    opacity:.34;
+  }
+
+  .card-header{
+    position:relative;
+    z-index:1;
+    padding:16px 20px;
+    background:linear-gradient(90deg, rgba(251,191,36,.14), rgba(56,189,248,.09));
+    border-bottom:1px solid rgba(255,255,255,.10);
+    display:flex;
+    justify-content:center;
+  }
+
+  .chip{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    color:rgba(248,250,252,.88);
+    font-weight:900;
+    font-size:13px;
+    background:rgba(0,0,0,.23);
+    border:1px solid rgba(255,255,255,.12);
+    direction:ltr;
+  }
+
+  .card-body{
+    position:relative;
+    z-index:1;
+    padding:26px;
+    padding-bottom:90px;
+    line-height:1.95;
+  }
+
+  .top-title{
+    margin:0;
+    text-align:center;
+    font-size:clamp(27px, 6vw, 42px);
+    line-height:1.25;
+    direction:ltr;
+    background:linear-gradient(90deg, var(--primary), #FFFFFF, var(--secondary));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow:0 0 22px rgba(251,191,36,.12);
+  }
+
+  .subline{
+    margin:10px 0 20px;
+    text-align:center;
+    color:var(--muted);
+    font-size:15px;
+  }
+
+  .muted{
+    color:rgba(248,250,252,.78);
+    font-weight:900;
+    margin-top:4px;
+  }
+
+  .letter{
+    white-space:pre-wrap;
+    font-size:17px;
+    color:rgba(248,250,252,.92);
+    margin-top:8px;
+  }
+
+  .letter .highlight{
+    color:#FEF3C7;
+    font-weight:900;
+    text-shadow:0 0 16px rgba(251,191,36,.16);
+  }
+
+  .divider{
+    position:relative;
+    height:24px;
+    margin:18px 0;
+  }
+
+  .divider::before{
+    content:"";
+    position:absolute;
+    left:12px;
+    right:12px;
+    top:50%;
+    height:1.5px;
+    transform:translateY(-50%);
+    background:
+      linear-gradient(90deg, rgba(251,191,36,.90), rgba(56,189,248,.72)) left / calc(50% - 18px) 1.5px no-repeat,
+      linear-gradient(90deg, rgba(56,189,248,.72), rgba(251,191,36,.90)) right / calc(50% - 18px) 1.5px no-repeat;
+  }
+
+  .divider::after{
+    content:"✦";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:var(--primary);
+    font-size:18px;
+    text-shadow:0 0 16px rgba(251,191,36,.26);
+  }
+
+  .ps-toggle{
+    margin:4px auto 0;
+    display:block;
+  }
+
+  .ps{
+    display:none;
+    margin-top:10px;
+    padding:14px 16px;
+    border-radius:18px;
+    background:rgba(0,0,0,.20);
+    border:1px solid rgba(255,255,255,.11);
+    color:rgba(248,250,252,.82);
+    font-size:15px;
+  }
+
+  .ps.show{
+    display:block;
+    animation:fadeIn .25s ease;
+  }
+
+  .quotes{
+    margin-top:6px;
+  }
+
+  .q-title{
+    margin:0 0 10px;
+    text-align:center;
+    color:rgba(248,250,252,.92);
+    font-size:18px;
+  }
+
+  .q-box{
+    min-height:112px;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    padding:18px 16px;
+    border-radius:18px;
+    border:1px dashed rgba(255,255,255,.18);
+    background:rgba(0,0,0,.22);
+    color:rgba(248,250,252,.88);
+    line-height:1.9;
+    font-size:18px;
+    box-shadow:0 0 22px rgba(56,189,248,.10);
+  }
+
+  .fade{
+    animation:quoteFade .32s ease;
+  }
+
+  @keyframes quoteFade{
+    from{opacity:0; transform:translateY(4px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+
+  .dots{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    align-items:center;
+    margin:12px 0 8px;
+    flex-wrap:wrap;
+  }
+
+  .dot{
+    width:10px;
+    height:10px;
+    border-radius:999px;
+    border:2px solid rgba(255,255,255,.18);
+    background:transparent;
+    cursor:pointer;
+    transition:transform .12s ease, background .12s ease, border-color .12s ease;
+  }
+
+  .dot.active{
+    background:var(--primary);
+    border-color:rgba(251,191,36,.75);
+    transform:scale(1.1);
+    box-shadow:0 0 14px rgba(251,191,36,.26);
+  }
+
+  .q-actions,
+  .actions{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+
+  .q-progress{
+    height:2px;
+    margin:10px 18px 0;
+    background:rgba(255,255,255,.10);
+    border-radius:999px;
+    overflow:hidden;
+  }
+
+  .q-progress .bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+
+  .q-progress.run .bar{
+    animation:qbar var(--qdur, 6s) linear forwards;
+  }
+
+  @keyframes qbar{
+    from{width:0%}
+    to{width:100%}
+  }
+
+  .vol-wrap{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .vol-label{
+    color:var(--muted);
+  }
+
+  input[type="range"]{
+    -webkit-appearance:none;
+    appearance:none;
+    width:140px;
+    height:8px;
+    border-radius:999px;
+    outline:none;
+    background:linear-gradient(90deg, rgba(251,191,36,.62), rgba(56,189,248,.52));
+    border:1px solid rgba(255,255,255,.12);
+  }
+
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance:none;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:rgba(0,0,0,.35);
+    border:2px solid var(--primary);
+    box-shadow:0 0 16px rgba(251,191,36,.24);
+  }
+
+  input[type="range"]::-moz-range-thumb{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:rgba(0,0,0,.35);
+    border:2px solid var(--primary);
+    box-shadow:0 0 16px rgba(251,191,36,.24);
+  }
+
+  .music-visual{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:12px;
+    opacity:.88;
+  }
+
+  .music-visual .spark{
+    font-size:19px;
+    width:24px;
+    text-align:center;
+    transform-origin:center;
+    opacity:.78;
+  }
+
+  .music-visual.on .spark{
+    animation:sparkBeat 1.2s ease-in-out infinite;
+  }
+
+  .music-visual.on .spark:nth-child(3n+1){
+    animation-delay:0s;
+  }
+
+  .music-visual.on .spark:nth-child(3n+2){
+    animation-delay:.16s;
+  }
+
+  .music-visual.on .spark:nth-child(3n){
+    animation-delay:.32s;
+  }
+
+  @keyframes sparkBeat{
+    0%,100%{transform:scale(1)}
+    35%{transform:scale(1.25)}
+    70%{transform:scale(1.05)}
+  }
+
+  @media (max-width:520px){
+    body{
+      padding-left:14px;
+      padding-right:14px;
+    }
+
+    .envelope{
+      height:320px;
+    }
+
+    .card-body{
+      padding:20px;
+      padding-bottom:80px;
+    }
+
+    .letter{
+      font-size:16px;
+    }
+
+    .q-box{
+      font-size:16px;
+    }
+
+    .btn,
+    .open-btn,
+    .unlock-btn{
+      padding:10px 13px;
+    }
+  }
+</style>
+</head>
+
+<body>
+<canvas id="confetti"></canvas>
+
+<div class="screen">
+  <section class="lock-screen" id="lockScreen">
+    <div class="lock-card">
+      <div class="lock-content">
+        <div class="lock-icon">🎂</div>
+        <h1 class="lock-title">برای باز شدن کارت، تاریخ تولدت رو وارد کن</h1>
+        <p class="lock-text">
+          این کارت فقط با تاریخ تولد باز می‌شه.
+          تاریخ رو با عدد انگلیسی یا فارسی وارد کن.
+        </p>
+
+        <div class="input-row">
+          <input class="date-input" id="birthInput" type="text" inputmode="numeric" autocomplete="off" placeholder="DD.MM.YYYY">
+          <button class="unlock-btn" id="unlockBtn">باز کردن کارت ✨</button>
+        </div>
+
+        <p class="hint"></p>
+        <div class="error" id="lockError"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="stage" id="stage">
+    <section class="envelope" id="envelope" aria-label="پاکت تولد">
+      <div class="env-body"></div>
+      <div class="flap"></div>
+      <div class="seal" id="seal" aria-hidden="true">🎂</div>
+      <div class="stamp" aria-hidden="true">🎁</div>
+
+      <div class="env-label">
+        یه تبریک کوچیک برای فرنوش 🎂✨
+      </div>
+
+      <div class="open-wrap">
+        <button class="open-btn" id="openBtn">بازش کن ✨</button>
+      </div>
+    </section>
+
+    <article class="card" id="card">
+      <div class="card-header">
+        <span class="chip">31.05.2026</span>
+      </div>
+
+      <div class="card-body">
+        <h1 class="top-title">Happy Birthday Farnoosh 🎂✨</h1>
+        <div class="subline">یه تبریک کوچیک برای امروزت</div>
+
+        <div class="muted">فرنوش،</div>
+        <div class="letter" id="letter">🎈🎈🎈</div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <button class="btn ps-toggle" id="psToggle" aria-expanded="false">یه یادداشت کوچیک 🎁</button>
+        <div class="ps" id="psText">
+          امیدوارم این کارت کوچیک، فقط یه لبخند ساده به امروزت اضافه کنه.
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <section class="quotes" id="quotes">
+          <h3 class="q-title">چند جمله‌ی کوچیک برای امروزت 🎂</h3>
+          <div id="quoteText" class="q-box fade">…</div>
+
+          <div id="qProgress" class="q-progress" aria-hidden="true">
+            <div class="bar"></div>
+          </div>
+
+          <div id="dots" class="dots" aria-label="جایگاه پیام‌ها"></div>
+
+          <div class="q-actions">
+            <button class="btn" id="prevBtn">قبلی ⟵</button>
+            <button class="btn" id="nextBtn">بعدی ⟶</button>
+            <button class="btn" id="randBtn">یه جمله تصادفی ✨</button>
+            <button class="btn" id="autoBtn" aria-pressed="false">پخش خودکار: خاموش</button>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button class="btn primary" id="replay">دوباره بخون 🎊</button>
+          <button class="btn" id="musicBtn">موسیقی 🎵</button>
+
+          <div class="vol-wrap" aria-label="میزان صدا">
+            <span class="vol-label">🔊</span>
+            <input id="volume" type="range" min="0" max="100" value="70" step="1">
+          </div>
+        </div>
+
+        <div class="music-visual" id="musicViz" aria-hidden="true">
+          <span class="spark">🎂</span>
+          <span class="spark">🎈</span>
+          <span class="spark">✨</span>
+          <span class="spark">🎁</span>
+          <span class="spark">🎉</span>
+          <span class="spark">🎂</span>
+          <span class="spark">🎈</span>
+          <span class="spark">✨</span>
+          <span class="spark">🎁</span>
+          <span class="spark">🎉</span>
+        </div>
+      </div>
+    </article>
+  </main>
+</div>
+
+<audio id="bgm" src="./bg.mp3" preload="auto" playsinline loop></audio>
+
+<script>
+  const BIRTHDAY_HASH = "d08a04bba3b77e458ad48490cfbc28c10c9e5cef124c152e23ff78f22ba6e3b0"
+
+  const letterText = `وقتی فهمیدم امروز تولدته،
+خواستم فقط با یه پیام ساده تبریک نگم.
+
+برای همین این کارت کوچیک رو آماده کردم.
+
+تولدت مبارک فرنوش.
+امیدوارم شروع 19 سالگی‌ات پر از آرامش، سلامتی، موفقیت و اتفاق‌های خوب باشه.
+
+امیدوارم امسال بیشتر بخندی،
+بیشتر به خودت افتخار کنی،
+و چیزهایی سر راهت قرار بگیرن که حال دلت رو بهتر کنن.`
+
+  const HIGHLIGHT_WORDS = ["تولدت", "فرنوش", "19", "آرامش", "سلامتی", "موفقیت", "لبخند"]
+
+  const QUOTES = [
+    {text:`فرنوش، تولدت مبارک. امیدوارم امروزت پر از لبخند و حس خوب باشه. 🎂✨`, author:""},
+    {text:`امیدوارم سال جدید زندگیت برات پر از آرامش، موفقیت و اتفاق‌های قشنگ باشه. 🌸`, author:""},
+    {text:`امروز روز توئه؛ امیدوارم همون‌قدر که شایسته‌اش هستی، قشنگ و آروم بگذره. 🎉`, author:""},
+    {text:`امیدوارم توی این سال جدید، بیشتر بخندی و کمتر نگران چیزهای بی‌ارزش باشی. ✨`, author:""},
+    {text:`تولدت مبارک فرنوش. امیدوارم مسیر زندگیت روشن‌تر، آروم‌تر و قشنگ‌تر از قبل بشه. 🌙`, author:""},
+    {text:`امیدوارم امسال پر از خبرهای خوب، آدم‌های خوب و لحظه‌های خوب برات باشه. 🎈`, author:""},
+    {text:`امیدوارم هر چیزی که دلت رو آروم می‌کنه، امسال بیشتر سر راهت قرار بگیره. ✨`, author:""},
+    {text:`برای امروزت لبخند، برای فرداهات امید، و برای سال جدیدت کلی اتفاق خوب آرزو می‌کنم. 🎂`, author:""},
+    {text:`تولدت مبارک؛ امیدوارم همیشه دلیل‌هایی برای لبخند زدن داشته باشی. ✨`, author:""},
+    {text:`امیدوارم این سال جدید، شروع چیزهای قشنگ‌تری برای تو باشه. 🌸`, author:""},
+    {text:`برات یه سال پر از سلامتی، آرامش، پیشرفت و دل‌خوشی‌های کوچیک و بزرگ آرزو می‌کنم. 🎁`, author:""},
+    {text:`امیدوارم امسال بیشتر به خودت افتخار کنی و بیشتر قدر خودت رو بدونی. 🌟`, author:""},
+    {text:`تولدت مبارک. امیدوارم هرجا هستی، امروزت با حال خوب بگذره. 🎈`, author:""},
+    {text:`آرزو می‌کنم سال جدید زندگیت پر از فرصت‌های خوب و تصمیم‌های درست باشه. ✨`, author:""},
+    {text:`امیدوارم لبخند امروزت فقط برای امروز نباشه و تا مدت‌ها ادامه پیدا کنه. 🌷`, author:""},
+    {text:`فرنوش، تولدت مبارک. امیدوارم آینده‌ات پر از آرامش، امید و اتفاق‌های قشنگ باشه. ✨`, author:""}
+  ]
+
+  const lockScreen = document.getElementById("lockScreen")
+  const stage = document.getElementById("stage")
+  const birthInput = document.getElementById("birthInput")
+  const unlockBtn = document.getElementById("unlockBtn")
+  const lockError = document.getElementById("lockError")
+
+  const envelope = document.getElementById("envelope")
+  const openBtn = document.getElementById("openBtn")
+  const card = document.getElementById("card")
+  const letterEl = document.getElementById("letter")
+  const psToggle = document.getElementById("psToggle")
+  const psText = document.getElementById("psText")
+
+  const quoteText = document.getElementById("quoteText")
+  const dotsWrap = document.getElementById("dots")
+  const prevBtn = document.getElementById("prevBtn")
+  const nextBtn = document.getElementById("nextBtn")
+  const randBtn = document.getElementById("randBtn")
+  const autoBtn = document.getElementById("autoBtn")
+  const replayBtn = document.getElementById("replay")
+  const qProgress = document.getElementById("qProgress")
+
+  const bgm = document.getElementById("bgm")
+  const musicBtn = document.getElementById("musicBtn")
+  const volumeEl = document.getElementById("volume")
+  const musicViz = document.getElementById("musicViz")
+
+  const canvas = document.getElementById("confetti")
+  const ctx = canvas.getContext("2d")
+  const confettiColors = ["#FBBF24", "#38BDF8", "#A78BFA", "rgba(255,255,255,.95)"]
+  let confettiPieces = []
+  let confettiTimer = null
+  let isOpen = false
+  let typeRun = 0
+  let typeTimeout = null
+  let quoteIndex = 0
+  let autoTimer = null
+  let isPlaying = false
+  const AUTO_INTERVAL = 6000
+
+  function resizeCanvas(){
+    canvas.width = window.innerWidth * devicePixelRatio
+    canvas.height = window.innerHeight * devicePixelRatio
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0)
+  }
+
+  window.addEventListener("resize", resizeCanvas)
+  resizeCanvas()
+
+  function spawnConfetti(count){
+    for(let i = 0; i < count; i++){
+      confettiPieces.push({
+        x:Math.random() * window.innerWidth,
+        y:-20 - Math.random() * 80,
+        w:6 + Math.random() * 7,
+        h:10 + Math.random() * 10,
+        vx:(-1 + Math.random() * 2) * 1.4,
+        vy:2.4 + Math.random() * 3.4,
+        rot:Math.random() * Math.PI,
+        vr:(-1 + Math.random() * 2) * .09,
+        color:confettiColors[Math.floor(Math.random() * confettiColors.length)],
+        life:230 + Math.random() * 160
+      })
+    }
+  }
+
+  function stepConfetti(){
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+    confettiPieces = confettiPieces.filter(p => p.life > 0 && p.y < window.innerHeight + 50)
+
+    for(const p of confettiPieces){
+      p.x += p.vx
+      p.y += p.vy
+      p.rot += p.vr
+      p.vx *= .999
+      p.vy *= .9995
+      p.life--
+
+      ctx.save()
+      ctx.translate(p.x, p.y)
+      ctx.rotate(p.rot)
+      ctx.fillStyle = p.color
+      ctx.globalAlpha = .95
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h)
+      ctx.restore()
+    }
+
+    if(confettiPieces.length > 0){
+      requestAnimationFrame(stepConfetti)
+    }
+  }
+
+  function burstConfetti(duration){
+    spawnConfetti(140)
+    requestAnimationFrame(stepConfetti)
+
+    if(confettiTimer){
+      clearInterval(confettiTimer)
+    }
+
+    const start = Date.now()
+    confettiTimer = setInterval(() => {
+      spawnConfetti(55)
+
+      if(Date.now() - start > duration){
+        clearInterval(confettiTimer)
+        confettiTimer = null
+      }
+    }, 230)
+  }
+
+  function toEnglishDigits(value){
+    const fa = "۰۱۲۳۴۵۶۷۸۹"
+    const ar = "٠١٢٣٤٥٦٧٨٩"
+
+    return String(value).replace(/[۰-۹٠-٩]/g, ch => {
+      const faIndex = fa.indexOf(ch)
+      if(faIndex > -1){
+        return String(faIndex)
+      }
+
+      const arIndex = ar.indexOf(ch)
+      if(arIndex > -1){
+        return String(arIndex)
+      }
+
+      return ch
+    })
+  }
+
+  function normalizeDateInput(value){
+    let s = toEnglishDigits(value).trim()
+    s = s.replace(/[،,]/g, ".")
+    s = s.replace(/[\/\-\s]+/g, ".")
+    s = s.replace(/\.+/g, ".")
+    s = s.replace(/^\./, "").replace(/\.$/, "")
+
+    const parts = s.split(".").filter(Boolean)
+
+    if(parts.length !== 3){
+      return ""
+    }
+
+    let day = parts[0].padStart(2, "0")
+    let month = parts[1].padStart(2, "0")
+    let year = parts[2]
+
+    if(year.length === 2){
+      year = "20" + year
+    }
+
+    if(!/^\d{2}$/.test(day) || !/^\d{2}$/.test(month) || !/^\d{4}$/.test(year)){
+      return ""
+    }
+
+    return `${day}.${month}.${year}`
+  }
+
+  function rightRotate(value, amount){
+    return (value >>> amount) | (value << (32 - amount))
+  }
+
+  function sha256(ascii){
+    const maxWord = Math.pow(2, 32)
+    let result = ""
+    let words = []
+    const asciiBitLength = ascii.length * 8
+
+    let hash = sha256.h = sha256.h || []
+    let k = sha256.k = sha256.k || []
+    let primeCounter = k.length
+    let isComposite = {}
+
+    for(let candidate = 2; primeCounter < 64; candidate++){
+      if(!isComposite[candidate]){
+        for(let i = 0; i < 313; i += candidate){
+          isComposite[i] = candidate
+        }
+
+        hash[primeCounter] = (Math.pow(candidate, .5) * maxWord) | 0
+        k[primeCounter] = (Math.pow(candidate, 1 / 3) * maxWord) | 0
+        primeCounter++
+      }
+    }
+
+    ascii += "\x80"
+
+    while(ascii.length % 64 - 56){
+      ascii += "\x00"
+    }
+
+    for(let i = 0; i < ascii.length; i++){
+      const j = ascii.charCodeAt(i)
+
+      if(j >> 8){
+        return ""
+      }
+
+      words[i >> 2] |= j << ((3 - i) % 4) * 8
+    }
+
+    words[words.length] = (asciiBitLength / maxWord) | 0
+    words[words.length] = asciiBitLength
+
+    for(let j = 0; j < words.length;){
+      const w = words.slice(j, j += 16)
+      const oldHash = hash.slice(0)
+
+      for(let i = 0; i < 64; i++){
+        const w15 = w[i - 15]
+        const w2 = w[i - 2]
+        const a = hash[0]
+        const e = hash[4]
+
+        const temp1 = hash[7]
+          + (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25))
+          + ((e & hash[5]) ^ ((~e) & hash[6]))
+          + k[i]
+          + (w[i] = i < 16 ? w[i] : (
+            w[i - 16]
+            + (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3))
+            + w[i - 7]
+            + (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))
+          ) | 0)
+
+        const temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22))
+          + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]))
+
+        hash = [(temp1 + temp2) | 0].concat(hash)
+        hash[4] = (hash[4] + temp1) | 0
+      }
+
+      for(let i = 0; i < 8; i++){
+        hash[i] = (hash[i] + oldHash[i]) | 0
+      }
+    }
+
+    for(let i = 0; i < 8; i++){
+      for(let j = 3; j + 1; j--){
+        const b = (hash[i] >> (j * 8)) & 255
+        result += (b < 16 ? "0" : "") + b.toString(16)
+      }
+    }
+
+    return result
+  }
+
+  function unlockCard(){
+    const normalized = normalizeDateInput(birthInput.value)
+    const hashed = sha256(normalized)
+
+    if(hashed === BIRTHDAY_HASH){
+      lockError.textContent = ""
+      lockScreen.style.display = "none"
+      stage.classList.add("show")
+      burstConfetti(1300)
+      setTimeout(() => openBtn.focus(), 250)
+    }else{
+      lockError.textContent = "تاریخ درست نبود، دوباره امتحان کن."
+      birthInput.focus()
+    }
+  }
+
+  unlockBtn.addEventListener("click", unlockCard)
+
+  birthInput.addEventListener("keydown", e => {
+    if(e.key === "Enter"){
+      unlockCard()
+    }
+  })
+
+  function cancelTyping(){
+    typeRun++
+
+    if(typeTimeout){
+      clearTimeout(typeTimeout)
+      typeTimeout = null
+    }
+  }
+
+  function escapeRegExp(str){
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  }
+
+  function highlightText(){
+    let html = letterEl.textContent
+
+    HIGHLIGHT_WORDS.forEach(word => {
+      const re = new RegExp(escapeRegExp(word), "g")
+      html = html.replace(re, `<span class="highlight">${word}</span>`)
+    })
+
+    letterEl.innerHTML = html
+  }
+
+  function typeWriter(text, el){
+    cancelTyping()
+    const run = ++typeRun
+    let i = 0
+    el.textContent = ""
+
+    function step(){
+      if(run !== typeRun){
+        return
+      }
+
+      if(i < text.length){
+        i++
+        el.textContent = text.slice(0, i)
+        typeTimeout = setTimeout(step, 22)
+      }else{
+        typeTimeout = null
+        highlightText()
+      }
+    }
+
+    step()
+  }
+
+  async function playMusic(){
+    try{
+      if(!bgm.src || bgm.error){
+        alert("برای پخش موسیقی، فایل bg.mp3 رو کنار فایل HTML قرار بده.")
+        return
+      }
+
+      bgm.volume = Number(volumeEl.value) / 100
+      await bgm.play()
+      isPlaying = true
+      musicBtn.textContent = "قطع موسیقی 🎵"
+      musicViz.classList.add("on")
+    }catch(e){
+      isPlaying = false
+      musicBtn.textContent = "موسیقی 🎵"
+      musicViz.classList.remove("on")
+    }
+  }
+
+  function pauseMusic(){
+    bgm.pause()
+    isPlaying = false
+    musicBtn.textContent = "موسیقی 🎵"
+    musicViz.classList.remove("on")
+  }
+
+  openBtn.addEventListener("click", async () => {
+    if(isOpen){
+      return
+    }
+
+    isOpen = true
+    envelope.classList.add("opened")
+    openBtn.disabled = true
+    burstConfetti(2600)
+    playMusic()
+
+    setTimeout(() => {
+      card.classList.add("show")
+      typeWriter(letterText, letterEl)
+      card.scrollIntoView({behavior:"smooth", block:"start"})
+    }, 560)
+  })
+
+  psToggle.addEventListener("click", () => {
+    psText.classList.toggle("show")
+    psToggle.setAttribute("aria-expanded", psText.classList.contains("show") ? "true" : "false")
+  })
+
+  function renderDots(){
+    dotsWrap.innerHTML = ""
+
+    QUOTES.forEach((item, i) => {
+      const dot = document.createElement("button")
+      dot.className = "dot"
+      dot.type = "button"
+      dot.setAttribute("aria-label", `پیام ${i + 1} از ${QUOTES.length}`)
+
+      dot.addEventListener("click", () => {
+        showQuote(i)
+        stopAuto()
+      })
+
+      dotsWrap.appendChild(dot)
+    })
+  }
+
+  function showQuote(i){
+    quoteIndex = (i + QUOTES.length) % QUOTES.length
+    quoteText.classList.remove("fade")
+    void quoteText.offsetWidth
+    quoteText.textContent = "«" + QUOTES[quoteIndex].text + "»"
+    quoteText.classList.add("fade")
+
+    Array.from(dotsWrap.children).forEach((dot, index) => {
+      dot.classList.toggle("active", index === quoteIndex)
+    })
+
+    if(autoTimer){
+      restartProgress()
+    }
+  }
+
+  function nextQuote(){
+    showQuote(quoteIndex + 1)
+  }
+
+  function prevQuote(){
+    showQuote(quoteIndex - 1)
+  }
+
+  function randomQuote(){
+    let next = Math.floor(Math.random() * QUOTES.length)
+
+    if(next === quoteIndex){
+      next = (next + 1) % QUOTES.length
+    }
+
+    showQuote(next)
+    burstConfetti(900)
+  }
+
+  function restartProgress(){
+    qProgress.style.setProperty("--qdur", AUTO_INTERVAL + "ms")
+    qProgress.classList.remove("run")
+    void qProgress.offsetWidth
+    qProgress.classList.add("run")
+  }
+
+  function stopProgress(){
+    qProgress.classList.remove("run")
+    const bar = qProgress.querySelector(".bar")
+
+    if(bar){
+      bar.style.width = "0%"
+      setTimeout(() => {
+        bar.style.width = ""
+      }, 20)
+    }
+  }
+
+  function startAuto(){
+    if(autoTimer){
+      return
+    }
+
+    autoTimer = setInterval(nextQuote, AUTO_INTERVAL)
+    autoBtn.textContent = "پخش خودکار: روشن"
+    autoBtn.setAttribute("aria-pressed", "true")
+    restartProgress()
+  }
+
+  function stopAuto(){
+    if(autoTimer){
+      clearInterval(autoTimer)
+      autoTimer = null
+    }
+
+    autoBtn.textContent = "پخش خودکار: خاموش"
+    autoBtn.setAttribute("aria-pressed", "false")
+    stopProgress()
+  }
+
+  prevBtn.addEventListener("click", () => {
+    prevQuote()
+    stopAuto()
+  })
+
+  nextBtn.addEventListener("click", () => {
+    nextQuote()
+    stopAuto()
+  })
+
+  randBtn.addEventListener("click", () => {
+    randomQuote()
+    stopAuto()
+  })
+
+  autoBtn.addEventListener("click", () => {
+    if(autoTimer){
+      stopAuto()
+    }else{
+      startAuto()
+    }
+  })
+
+  replayBtn.addEventListener("click", () => {
+    if(!card.classList.contains("show")){
+      return
+    }
+
+    stopAuto()
+    typeWriter(letterText, letterEl)
+    burstConfetti(1200)
+    card.scrollIntoView({behavior:"smooth", block:"start"})
+  })
+
+  musicBtn.addEventListener("click", () => {
+    if(isPlaying){
+      pauseMusic()
+    }else{
+      playMusic()
+    }
+  })
+
+  volumeEl.addEventListener("input", () => {
+    bgm.volume = Number(volumeEl.value) / 100
+  })
+
+  bgm.addEventListener("pause", () => {
+    if(!bgm.ended){
+      isPlaying = false
+      musicBtn.textContent = "موسیقی 🎵"
+      musicViz.classList.remove("on")
+    }
+  })
+
+  renderDots()
+  showQuote(0)
+</script>
+</body>
+</html>
