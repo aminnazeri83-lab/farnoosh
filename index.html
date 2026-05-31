@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<link rel="icon" type="image/png" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
-
 <title>Happy Birthday Farnoosh 🎂</title>
 <meta name="theme-color" content="#0F172A">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 
 <style>
   :root{
@@ -20,7 +19,6 @@
     --ink:#F8FAFC;
     --muted:rgba(248,250,252,.75);
     --card:rgba(15,23,42,.72);
-    --card2:rgba(2,6,23,.38);
     --border:rgba(255,255,255,.14);
     --shadow:0 22px 70px rgba(0,0,0,.55);
     --radius:24px;
@@ -759,12 +757,10 @@
         <div class="lock-icon">🎂</div>
         <h1 class="lock-title">برای باز شدن کارت، تاریخ تولدت رو وارد کن</h1>
         <p class="lock-text">
-          این کارت فقط با تاریخ تولد باز می‌شه.
-          تاریخ رو با عدد انگلیسی یا فارسی وارد کن.
         </p>
 
         <div class="input-row">
-          <input class="date-input" id="birthInput" type="text" inputmode="numeric" autocomplete="off" placeholder="DD.MM.YYYY">
+          <input class="date-input" id="birthInput" type="text" inputmode="numeric" autocomplete="off" placeholder="DDMMYYYY" maxlength="8">
           <button class="unlock-btn" id="unlockBtn">باز کردن کارت ✨</button>
         </div>
 
@@ -797,7 +793,7 @@
 
       <div class="card-body">
         <h1 class="top-title">Happy Birthday Farnoosh 🎂✨</h1>
-        <div class="subline">یه تبریک کوچیک برای امروزت</div>
+        <div class="subline">یه تبریک کوچیک، برای امروزت</div>
 
         <div class="muted">فرنوش،</div>
         <div class="letter" id="letter">🎈🎈🎈</div>
@@ -1026,30 +1022,17 @@
 
   function normalizeDateInput(value){
     let s = toEnglishDigits(value).trim()
-    s = s.replace(/[،,]/g, ".")
-    s = s.replace(/[\/\-\s]+/g, ".")
-    s = s.replace(/\.+/g, ".")
-    s = s.replace(/^\./, "").replace(/\.$/, "")
+    s = s.replace(/[^\d]/g, "")
 
-    const parts = s.split(".").filter(Boolean)
+    if(s.length === 8){
+      const day = s.slice(0, 2)
+      const month = s.slice(2, 4)
+      const year = s.slice(4, 8)
 
-    if(parts.length !== 3){
-      return ""
+      return `${day}.${month}.${year}`
     }
 
-    let day = parts[0].padStart(2, "0")
-    let month = parts[1].padStart(2, "0")
-    let year = parts[2]
-
-    if(year.length === 2){
-      year = "20" + year
-    }
-
-    if(!/^\d{2}$/.test(day) || !/^\d{2}$/.test(month) || !/^\d{4}$/.test(year)){
-      return ""
-    }
-
-    return `${day}.${month}.${year}`
+    return ""
   }
 
   function rightRotate(value, amount){
@@ -1152,10 +1135,14 @@
       burstConfetti(1300)
       setTimeout(() => openBtn.focus(), 250)
     }else{
-      lockError.textContent = "تاریخ درست نبود، دوباره امتحان کن."
+      lockError.textContent = "تاریخ درست نبود. اینطوری وارد کن: 31052007"
       birthInput.focus()
     }
   }
+
+  birthInput.addEventListener("input", () => {
+    birthInput.value = toEnglishDigits(birthInput.value).replace(/[^\d]/g, "").slice(0, 8)
+  })
 
   unlockBtn.addEventListener("click", unlockCard)
 
